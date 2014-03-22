@@ -86,8 +86,9 @@ App.prototype.filterRoom = function(roomName){
 App.prototype.retrieveOnSuccess = function(resultData){
 	$('#messagesDiv p').remove();
 	var that = this;
-	resultData = _.sortBy(resultData, 'createdAt');
+	resultData = _.sortBy(resultData, 'CreatedAt');
 	_.each(resultData, function(item) {
+		console.log(item);
 		var room = $('<span>'+item.roomname+'</span>').text();
 		room = that.sanitize(room);
 		if (!that.rooms[room]) {
@@ -95,7 +96,7 @@ App.prototype.retrieveOnSuccess = function(resultData){
 			$('#rooms').append('<option value="'+room+'">'+room+'</option>');
 			$('#selectRoom').append('<option value="'+room+'">'+room+'</option>');
 		}
-		var text = $('<span>'+item.text+'</span>').text();
+		var text = $('<span>'+item.Text+'</span>').text();
 		text = that.sanitize(text);
 		var user = $('<span>'+item.username+'</span>').text();
 		user = that.sanitize(user);
@@ -195,6 +196,14 @@ $(document).ready(function(){
 	$('#rooms').on('change', function(){
 		var roomName = $(this).val();
 		roomName === 'All Rooms' ? $('p').show() : application.filterRoom(roomName);
+	});
+
+	$('#selectRoom').on('change', function(){
+		var roomName = $(this).val();
+		if (roomName === 'Create Room') {
+			var createRoom = $('<input type="text" id="createRoom">');
+			createRoom.insertAfter('#selectRoom');
+		}
 	});
 
 	// setInterval(function(){

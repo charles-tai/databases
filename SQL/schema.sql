@@ -1,11 +1,16 @@
 USE chat;
 
+-- ---
+-- Table 'Friends'
+--
+-- ---
 
-DROP TABLE IF EXISTS `User`;
+DROP TABLE IF EXISTS `Friends`;
 
-CREATE TABLE `User` (
+CREATE TABLE `Friends` (
   `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `username` VARCHAR(100) NULL DEFAULT NULL,
+  `friend_username` VARCHAR(100) NULL DEFAULT NULL,
+  `id_User` INTEGER NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -38,19 +43,17 @@ CREATE TABLE `Messages` (
   PRIMARY KEY (`id`)
 );
 
--- ---
--- Table 'Friends'
---
--- ---
 
-DROP TABLE IF EXISTS `Friends`;
+DROP TABLE IF EXISTS `User`;
 
-CREATE TABLE `Friends` (
+CREATE TABLE `User` (
   `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `friend_username` VARCHAR(100) NULL DEFAULT NULL,
-  `id_User` INTEGER NULL DEFAULT NULL,
+  `username` VARCHAR(100) NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
+
+
+
 
 -- ---
 -- Foreign Keys
