@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>chatterbox</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- dependencies -->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <!-- your scripts -->
+    <script src="scripts/config.js"></script>
+    <script src="scripts/app.js"></script>
+  </head>
+  <body>
+    <div id="main">
+      <h1>Sauna Chatterbox</h1>
+      <!-- Your HTML goes here! -->
+      <button id='refresh'>Refresh Messages</button>
+      <select id='rooms'>
+        <option value='All Rooms'> All Rooms</option>
+      </select>
+      <button id='createRoom'>Create Chat Room</button>
+      <div id='friendsBox'><span>Friends:</span> </div>
+      <select id='selectRoom'>
+        <option value='All Rooms'> All Rooms</option>
+      </select>
+      <input id='textMsg'type='text'>
+      <button id='sendMsg'>Send</button>
+      <h3>Filters:</h3>
+      <button id='friendsFilter'>Friends Filter</button>
+      <button id='allMessages'>All Messages</button>
+      <div id='messagesDiv'></div>
+    </div>
+  </body>
+</html>

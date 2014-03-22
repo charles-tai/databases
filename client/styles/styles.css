@@ -1,0 +1,156 @@
+body {
+    background: url('../images/woodBG.png');
+    text-align: center;
+    padding: 0 25px;
+    font-family: courier, sans-serif;
+}
+
+#main {
+    width: 700px;
+    text-align: left;
+    background: rgba(255,255,255,.5);
+    padding: 50px 60px;
+    border: solid #ddd;
+    border-radius: 3px;
+    border-width: 0 1px 1px 1px;
+}
+
+#main h1 {
+    margin-top: 0;
+    font-size: 35px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+#main h1 span {
+    font-style:italic;
+}
+
+#main ul {
+    padding-left: 20px;
+}
+
+#main .error {
+    border: 1px solid red;
+    background: #FDEFF0;
+    padding: 20px;
+}
+
+#main .success {
+    margin-top: 25px;
+}
+
+#main .success code {
+    font-size: 12px;
+    color: green;
+    line-height: 13px;
+}
+
+form {
+    padding: 20px;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+form input[type=text] {
+    margin-right: 10px;
+    width: 70%;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.chat {
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #eee;
+}
+
+.chat .username {
+    font-weight: 800;
+}
+
+.chat:hover {
+    background-color: #ddd;
+}
+
+.spinner {
+    float: right;
+    height: 46px;
+    margin-bottom: 5px;
+}
+
+.spinner img {
+    padding: 10px;
+}
+
+button{
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    color: black;
+    border: 1px solid black;
+    font-family: courier;
+}
+
+select {
+   background: rgba(255,255,255,0.5);
+   padding: 5px;
+   margin-top: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: none;
+   height: 34px;
+}
+
+#messagesDiv {
+    border-radius: 5px;
+}
+
+a {
+    color: black;
+    font-size: 1.4em;
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+a:visited {
+    color: black;
+}
+
+p {
+    border: 2px dashed #cdaa7d;
+    min-height: 80px;
+    padding-left: 5px;
+    height: auto;
+    text-align: left;
+    margin-bottom: -16px;
+    vertical-align: middle;
+    word-wrap: break-word;
+}
+
+p:nth-child(2n){
+    background: rgba(255,255,255, .85);
+}
+
+#friendsBox {
+    margin-top: 5px;
+    height: 50px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 5px;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+
+#friendsBox span{
+    margin-left: 5px;
+    display: block;
+}
+
+#friendsBox a {
+    color: blue;
+    text-decoration: none;
+    margin-left: 5px;
+    font-size: .75em;
+}
+
