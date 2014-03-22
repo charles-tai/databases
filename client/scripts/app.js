@@ -163,7 +163,7 @@ $(document).ready(function(){
 		var msg = {
 			'username': application.user,
 			'text': $('#textMsg').val(),
-			'roomname': $('#selectRoom').val()
+			'roomname': getRoom()
 		};
     application.send(msg);
     $('#textMsg').val('');
@@ -179,6 +179,15 @@ $(document).ready(function(){
 		});
   });
 
+  // get selected room function for sending the message object in
+  var getRoom = function(){
+		if ( $('#selectRoom').val() === 'Create Room') {
+			return $('#createRoom').val() !== '' ? $('#createRoom').val() : 'All Rooms';
+		} else {
+			return $('#selectRoom').val();
+		}
+	};
+
   //show all messages
   $('#allMessages').on('click', function(){
 		$('p').show();
@@ -189,7 +198,6 @@ $(document).ready(function(){
 		e.preventDefault();
 		application.storeFriends($(this).html());
 		application.checkFriends();
-
   });
 
   // change rooms on selection

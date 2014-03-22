@@ -14,6 +14,23 @@ CREATE TABLE `Friends` (
   PRIMARY KEY (`id`)
 );
 
+
+-- ---
+-- Table 'Messages'
+--
+-- ---
+
+DROP TABLE IF EXISTS `Messages`;
+
+CREATE TABLE `Messages` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `Text` VARCHAR(256) NULL DEFAULT NULL,
+  `id_User` INTEGER NULL DEFAULT NULL,
+  `id_Room` INTEGER NULL DEFAULT NULL,
+  `CreatedAt` TIMESTAMP NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
 -- ---
 -- Table 'Room'
 --
@@ -28,20 +45,6 @@ CREATE TABLE `Room` (
   PRIMARY KEY (`id`)
 );
 
--- ---
--- Table 'Messages'
---
--- ---
-
-DROP TABLE IF EXISTS `Messages`;
-
-CREATE TABLE `Messages` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `Text` VARCHAR(256) NULL DEFAULT NULL,
-  `id_User` INTEGER NULL DEFAULT NULL,
-  `CreatedAt` TIMESTAMP NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-);
 
 
 DROP TABLE IF EXISTS `User`;
@@ -60,6 +63,7 @@ CREATE TABLE `User` (
 -- ---
 
 ALTER TABLE `Room` ADD FOREIGN KEY (id_User) REFERENCES `User` (`id`);
+ALTER TABLE `Messages` ADD FOREIGN KEY (id_Room) REFERENCES `Room` (`id`);
 ALTER TABLE `Messages` ADD FOREIGN KEY (id_User) REFERENCES `User` (`id`);
 ALTER TABLE `Friends` ADD FOREIGN KEY (id_User) REFERENCES `User` (`id`);
 
